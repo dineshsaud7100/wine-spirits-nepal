@@ -108,13 +108,12 @@ export default function ProductDetailPage({ params }) {
                                             },
                                             className: "aspect-[3/4] bg-gradient-to-br from-white/5 to-white/[0.02] rounded-3xl border border-white/5 flex items-center justify-center relative overflow-hidden",
                                             children: [
-                                                /*#__PURE__*/ _jsx("div", {
-                                                    className: "w-40 h-52 bg-gold/10 rounded-2xl flex items-center justify-center",
-                                                    children: /*#__PURE__*/ _jsx(Tag, {
-                                                        className: "w-16 h-16 text-gold/30"
-                                                    })
-                                                }),
-                                                /*#__PURE__*/ _jsxs("div", {
+                                            /*#__PURE__*/ _jsx("img", {
+                                                src: product.images?.[0],
+                                                alt: product.name,
+                                                className: "absolute inset-0 w-full h-full object-cover rounded-3xl"
+                                            }),
+                                            /*#__PURE__*/ _jsxs("div", {
                                                     className: "absolute top-4 left-4 flex flex-col gap-2",
                                                     children: [
                                                         discount > 0 && /*#__PURE__*/ _jsxs("span", {
@@ -135,10 +134,12 @@ export default function ProductDetailPage({ params }) {
                                         }),
                                         /*#__PURE__*/ _jsx("div", {
                                             className: "flex gap-3 mt-4",
-                                            children: product.images.map((_, i)=>/*#__PURE__*/ _jsx("div", {
-                                                    className: cn("w-20 h-20 rounded-xl border flex items-center justify-center cursor-pointer transition-all", i === 0 ? "border-gold/50 bg-gold/10" : "border-white/10 bg-white/5 hover:border-white/20"),
-                                                    children: /*#__PURE__*/ _jsx(Tag, {
-                                                        className: "w-6 h-6 text-gold/30"
+                                            children: product.images.map((img, i)=>/*#__PURE__*/ _jsx("div", {
+                                                    className: cn("w-20 h-20 rounded-xl border flex items-center justify-center cursor-pointer transition-all overflow-hidden", i === 0 ? "border-gold/50" : "border-white/10 hover:border-white/20"),
+                                                    children: /*#__PURE__*/ _jsx("img", {
+                                                        src: img,
+                                                        alt: product.name,
+                                                        className: "w-full h-full object-cover"
                                                     })
                                                 }, i))
                                         })

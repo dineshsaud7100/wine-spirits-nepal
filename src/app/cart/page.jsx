@@ -113,9 +113,11 @@ export default function CartPage() {
                                             children: [
                                                 /*#__PURE__*/ _jsx(Link, {
                                                     href: `/product/${product.slug}`,
-                                                    className: "w-20 h-24 sm:w-24 sm:h-28 bg-white/5 rounded-xl flex items-center justify-center flex-shrink-0",
-                                                    children: /*#__PURE__*/ _jsx(Tag, {
-                                                        className: "w-8 h-8 text-gold/30"
+                                                    className: "w-20 h-24 sm:w-24 sm:h-28 rounded-xl flex-shrink-0 overflow-hidden",
+                                                    children: /*#__PURE__*/ _jsx("img", {
+                                                        src: product.images?.[0],
+                                                        alt: product.name,
+                                                        className: "w-full h-full object-cover"
                                                     })
                                                 }),
                                                 /*#__PURE__*/ _jsxs("div", {

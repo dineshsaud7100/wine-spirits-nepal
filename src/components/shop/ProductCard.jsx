@@ -42,7 +42,12 @@ export default function ProductCard({ product, index = 0 }) {
                     href: `/product/${product.slug}`,
                     className: "block relative aspect-[3/4] bg-gradient-to-br from-white/5 to-white/[0.02] overflow-hidden",
                     children: [
-                        /*#__PURE__*/ _jsx("div", {
+                        !imageError ? /*#__PURE__*/ _jsx("img", {
+                            src: product.images?.[0],
+                            alt: product.name,
+                            className: "absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110",
+                            onError: ()=>setImageError(true)
+                        }) : /*#__PURE__*/ _jsx("div", {
                             className: "absolute inset-0 flex items-center justify-center",
                             children: /*#__PURE__*/ _jsx("div", {
                                 className: "w-24 h-32 bg-gold/10 rounded-lg flex items-center justify-center",
